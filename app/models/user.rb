@@ -7,4 +7,11 @@ class User < ApplicationRecord
 
     has_many :favorite_enrollments, -> { where(favorite: true) }, class_name: "Enrollment"
     has_many :favorite_teachers, through: :favorite_enrollments, source: :teacher
+
+    def classmates
+        User.joins(:enrollments)
+            .where(enrollments: { program_id: programs.ids })
+            .where.not(id: id)
+            .distinct
+    end
 end
