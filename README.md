@@ -1,3 +1,5 @@
+<img width="1791" alt="image" src="https://github.com/AdityaBhutani/aditya_ruby_assessment_test/assets/21058509/8655f3ec-1d84-4d8a-9db7-2e0c4c5b1a1d">
+
 # Welcome to the assesment test
 ### DO NOT FORK THIS PROJECT
 
