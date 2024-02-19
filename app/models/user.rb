@@ -9,6 +9,9 @@ class User < ApplicationRecord
   has_many :favorite_enrollments, -> { where(favorite: true) }, class_name: 'Enrollment'
   has_many :favorite_teachers, through: :favorite_enrollments, source: :teacher
 
+  has_many :taught_enrollments, foreign_key: :teacher_id, class_name: "Enrollment"
+  has_many :students, through: :taught_enrollments, source: :user
+
   before_update :validate_kind_change_for_teacher, if: :kind_changed?
 
   def classmates
